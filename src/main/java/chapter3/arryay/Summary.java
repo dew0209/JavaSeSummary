@@ -101,6 +101,7 @@ public class Summary {
         for(int n = 0;n < 11;n++){
             odds[n] = new int[n + 1];
         }
+        System.out.println("111");
     }
 
 }
