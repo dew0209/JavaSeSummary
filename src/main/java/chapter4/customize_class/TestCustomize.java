@@ -3,6 +3,8 @@ package chapter4.customize_class;
 import chapter4.customize_class.d_4_2.Employee;
 import org.junit.Test;
 
+import java.text.NumberFormat;
+
 public class TestCustomize {
     /**
      * 程序清单4_2
@@ -69,5 +71,24 @@ public class TestCustomize {
         Employee harry = new Employee("john", 100, 2020, 1, 20);
         harry.setId();
         System.out.println(harry.getId());//2
+    }
+
+    /**
+     * 静态常量
+     */
+    public static final double PI = 3.1415926;
+    @Test
+    public void test07(){
+        //PI = 1.1;//不可再被重新赋值，编译报错
+    }
+    /**
+     * 工厂方法
+     * 为什么NumberFormat类不利用构造器完成这些操作呢？
+     *  无法命名构造器。构造器的名字必须和类名相同。但是，这里希望将的到的货币实例和百分比实例采用不同的名字
+     *  当使用构造器时，无法改变所构造的对象类型。
+     */
+    public void test08(){
+        NumberFormat currencyInstance = NumberFormat.getCurrencyInstance();
+        NumberFormat percentInstance = NumberFormat.getPercentInstance();
     }
 }

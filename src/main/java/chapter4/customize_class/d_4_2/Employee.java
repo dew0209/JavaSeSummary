@@ -34,6 +34,16 @@ public class Employee {
         id = nextId++;
     }
 
+    /**
+     * 静态方法，无法访问id实例域，因为它不能操作对象。但是可以访问类中的静态域
+     * 这个方法可以省略static，但那时必须要通过对象调用，不能通过类名进行调用
+     * 可以使用对象来调用静态方法，但是不建议
+     * @return static fields
+     */
+    public static int getNextId() {
+        return nextId;//return static fields;
+    }
+
     public int getId() {
         return id;
     }
@@ -57,5 +67,16 @@ public class Employee {
     }
     public String getEvaluations(){
         return evaluations.toString();
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", salary=" + salary +
+                ", hireDay=" + hireDay +
+                ", evaluations=" + evaluations +
+                '}';
     }
 }
